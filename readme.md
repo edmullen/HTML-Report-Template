@@ -8,4 +8,4 @@ I still need to clean out the current content and neutralize things.
 
 ## Demo
 
-(The Economics of Biophilia)[http://www.terrapinbrightgreen.com/reports/the-economics-of-biophilia/] by Terrapin Bright Green
+[The Economics of Biophilia](http://www.terrapinbrightgreen.com/reports/the-economics-of-biophilia/) by Terrapin Bright Green
