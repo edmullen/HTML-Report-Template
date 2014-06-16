@@ -1,0 +1,349 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+BASE TYPOGRAPHIC STYLES
+These styles establish the base typography rythmns after normalize.css
+has standardized display.
+======================================================================================= 
+
+*/
+
+// Using the following proportional scale
+//  .8 / 1 / 1.25  / 1.563 / 1.953 / 2.441 / 3.052 / 3.815 / 4.768
+
+html {
+  font-size: $base-font-size * 1.1;
+
+  @include responsive(large-screens) {
+    font-size: $base-font-size;
+  }
+}
+
+body {
+  color: $color-dark;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: $base-font-line-height;
+  background-color: $color-canvas;
+}
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+  
+  &:visited {
+    color: $color-accent-desaturated;
+  }
+  
+  &:hover, &:visited:hover {
+    @include transition($transition-property, $transition-duration);
+    color: $color-accent-darker;
+  }
+}
+
+// Margin above is based on headline, margin below is based on Root EM 
+h1, h2, h3, h4, h5 { 
+  font-family: $heading-font-family; 
+  font-weight: $heading-font-weight;  
+  font-style: normal;
+  margin: 1.5rem 0 1.5rem;
+} 
+
+h1 { 
+  font-size: 2.441rem; 
+  line-height: 1;
+  margin: 1em 0 1rem;
+}
+
+h2 { 
+  font-size: 1.953rem; 
+  line-height: 1.2; 
+}
+
+h3 { 
+  font-size: 1.563rem; 
+  line-height: 1.3;
+}
+
+h4 { 
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+h5 { 
+  font-size: 1rem; 
+  font-weight: bold;
+  margin: 1em 0 1rem;
+}
+
+ul, ol { 
+  margin: 0;
+  padding: 0;
+}
+
+.block-margins { 
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1.5rem;
+}
+
+p, code { 
+  @extend .block-margins; 
+}
+
+figure {
+  padding-bottom: .5rem;
+
+  figcaption {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+ul { 
+  margin-left: 1.825em;
+  @extend .block-margins; 
+}
+
+ol { 
+    @extend .block-margins;
+    padding-left: 0em;
+    margin-left: 1.5em;
+
+    ol, ol ol, ol ol ol {
+      margin-left: 0;
+      padding-bottom: 0;
+      padding-left: 1.5em;
+    }
+
+    li { 
+      padding-bottom: .375em;
+    }
+
+    li li, li li li {
+      padding-bottom: 0;
+    }
+}
+
+ol.nested-numbers {  
+    margin-left: 0;
+    counter-reset: item;
+
+    li { 
+      display: block;
+    }
+
+    li:before { 
+      content: counters(item,".") " "; counter-increment: item;
+      padding-right: .5em; 
+    }
+}
+
+blockquote { 
+  font-size: 110%; 
+  padding: 0; 
+  margin: 0; 
+  margin-bottom: 1.75rem;
+}
+
+dt {
+  font-weight: $bold-font-weight;
+}
+dd {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.text-left {
+  text-align: left !important; 
+}
+
+.text-center { 
+  text-align: center !important; 
+}
+
+.text-right  { 
+  text-align: right !important; 
+}
+
+.quiet { 
+  color: $color-dark-lighter; 
+}
+
+.small {
+  font-size: .75em;
+}
+
+.loud  { 
+  color: $color-dark-darker; 
+}
+
+strong { 
+  font-weight: 700;
+}
+
+em { 
+  font-style: italic; 
+}
+
+.fixed { 
+  font-family: $fixed-font-family; 
+  font-size: $fixed-font-size; 
+  line-height: $fixed-line-height; 
+}
+
+code { 
+  @extend .fixed; 
+  background-color: $color-neutral; 
+  padding: $margin-outer-sides; display: block;
+}
+
+table {
+  border: 1px solid $color-neutral; 
+  font-size: 92%;
+  @extend .text-left;
+  margin-bottom:  2rem;
+
+  & th {
+    background-color: $color-neutral-lighter;
+    border: 1px solid $color-neutral;
+    padding: .25em .5em;
+  }
+
+  & td {
+    border: 1px solid $color-neutral;
+    padding: .25em .5em;
+  }
+
+  & caption { 
+    padding: .25em 0;
+    @extend .text-left; 
+  }
+}
+
+a.button-chicklet {
+  padding: .375em .5em;
+  @include rounded($radius);
+  background-color: $color-callout-bg;
+  color: $color-accent;
+  font-size: .75em;
+
+  &:visited {
+    background-color: $color-callout-bg;
+  }
+  
+  &:hover, &:visited:hover {
+    background-color: $color-accent;
+    color: $color-canvas;
+    @include transition($transition-property, $transition-duration);
+  }
+}
+
+
+
+
+/* 
+
+=======================================================================================
+BASE STRUCTURAL STYLES
+=======================================================================================
+
+*/
+
+/* Paul Irish - http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*, *:before, *:after {
+  @include box-sizing;
+} 
+
+.group {
+}
+
+.group:after {
+  @include group;
+}
+
+nav ul {
+  margin: 0; 
+  padding: 0;
+  list-style-type: none;
+}
+
+
+
+
+/*
+
+=======================================================================================
+UTILITIES
+======================================================================================= 
+
+*/
+
+
+// Breakpoint Indicator - This is an aid to use during development to indicate which breakpoint is in use.
+
+.bp-indicator {
+  display: none; /* To show set to block. */
+  color: $color-dark;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 5555;
+}
+
+.bp-item {
+  padding: .5rem 1rem;
+}
+
+.bp-small-1, .bp-small-2, .bp-medium, .bp-medium-1, .bp-medium-2, .bp-large, .bp-large-1, .bp-large-2, .bp-large-3 {
+  display: none;
+}
+
+@include responsive(small-screens-1) {
+  .bp-small {display: none;}
+  .bp-small-1 {display: inline;}
+}
+
+@include responsive(small-screens-2) {
+  .bp-small-1 {display: none;}
+  .bp-small-2 {display: inline;}
+}
+
+@include responsive(medium-screens) {
+  .bp-small-2 {display: none;}
+  .bp-medium {display: inline;}
+}
+
+@include responsive(medium-screens-1) {
+  .bp-medium {display: none;}
+  .bp-medium-1 {display: inline;}
+}
+
+@include responsive(medium-screens-2) {
+  .bp-medium-1 {display: none;}
+  .bp-medium-2 {display: inline;}
+}
+
+@include responsive(large-screens) {
+  .bp-medium-2 {display: none;}
+  .bp-large {display: inline;}
+}
+
+@include responsive(large-screens-1) {
+  .bp-large {display: none;}
+  .bp-large-1 {display: inline;}
+}
+
+@include responsive(large-screens-2) {
+  .bp-large-1 {display: none;}
+  .bp-large-2 {display: inline;}
+}
+
+@include responsive(large-screens-3) {
+  .bp-large-2 {display: none;}
+  .bp-large-3 {display: inline;}
+}

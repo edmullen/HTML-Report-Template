@@ -1,0 +1,132 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+SASS VARIABLES
+These variables are used throughout the template. If you are customing this template, 
+you should first customize these styles. They will provide you with considerable
+visual distinction. If you need customize it beyond these variables, edit _theme.scss
+with your overrides.
+=======================================================================================
+
+*/
+
+
+//  COLORS
+
+	//  CANVAS - This is the default page background color.
+
+		$color-canvas: white;
+		
+
+	//  DARK
+
+		$color-dark: #555;
+		$color-dark-darker: darken($color-dark, 10%);
+		$color-dark-lighter: lighten($color-dark, 30%);
+
+
+	//  ACCENT - This is the most prominent accent color used to provide character and as links, with calculated variations.
+
+		$color-accent: #5aa4d3;
+		$color-accent-darker: darken($color-accent, 15%);
+		$color-accent-lighter: lighten($color-accent, 15%);
+		$color-accent-desaturated: desaturate( $color-accent, 35%);
+
+
+	//  NEUTRAL - These colors are used in a number of places including .front-matter, .appendix, and .footer.
+
+		$color-neutral: #ecebe4;
+		$color-neutral-lighter: #f6f6f3; // Was: lighten($color-neutral, 10%);
+		$color-neutral-darker: darken($color-neutral, 10%);
+
+
+	//  REVERSE - These colors are used for .global-header (persistent top navigation) and .my_popup (the navigation overlay)
+	
+		$color-reverse-bg: #605e55;
+		$color-reverse-knockout: #fff;
+		$color-reverse-knockout-60: rgba($color-reverse-knockout,.6);
+		$color-reverse-knockout-30: rgba($color-reverse-knockout,.3);
+
+
+	//  CALLOUTS 
+
+		$color-callout-bg: #b2aa3f;
+		$color-callout-text: $color-canvas;
+		$color-callout-text-secondary: rgba($color-callout-text,.4);
+
+
+	
+	
+
+
+//  TYPOGRAPHY
+
+	$base-font-size: 18px;
+	$base-font-family: 'news-gothic-std', sans-serif;
+	$base-font-weight: 400;
+	$base-font-line-height: 1.5;
+
+	$heading-font-family: "news-gothic-std", sans-serif;
+	$heading-font-weight: 700;
+
+	$accent-font-family: 'georgia', serif;
+	$accent-font-weight: 400;
+
+	$fixed-font-family: 'Courier', monospace;
+	$fixed-font-size: 15px;
+	$fixed-line-height: 1.6;
+
+	$normal-font-weight: 400;
+	$bold-font-weight: 700;
+
+
+
+//  ROUNDED
+
+	$radius: 3px;
+
+
+
+//  SHADOW, SHADOW INSET
+
+	$x: 0; 
+	$y: -8px;
+	$blur: 1em;
+	$spread: -15px;
+	$color: #000;
+
+//  TRANSITION
+
+	$transition-property: all;
+	$transition-duration: .25s;
+
+
+
+//  LINEAR GRADIENT
+
+	$gradient-from: lighten($color-accent, 5%);
+	$gradient-to: darken($color-accent, 5%);
+
+
+
+//  MEDIA QUERIES
+
+	$bp-small: 24em;
+	    $bp-small-1: 27em;
+	    $bp-small-2: 30em;
+	$bp-medium: 35em;
+	    $bp-medium-1: 43em;
+	    $bp-medium-2: 51em;
+	$bp-large: 60em;
+	    $bp-large-1: 70em;
+	    $bp-large-2: 80em;
+	    $bp-large-3: 90em;
+
+
+
+// STRUCTURAL
+
+	$margin-outer-sides: 1.25rem;
+
+

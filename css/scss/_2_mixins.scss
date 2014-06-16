@@ -1,0 +1,224 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+SASS MIXINS
+These mixins are used throughout the template. If you are customing this template, you
+shouldn't need to edit this file. 
+=======================================================================================
+
+*/
+
+// CLEARFIX - Apply class="group" to containers that need clearing.
+
+@mixin group {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+// ROUNDED
+
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+// SHADOWS
+
+@mixin shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+     -moz-box-shadow: $x $y $blur $spread $color;
+          box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin shadow-inset($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: inset $x $y $blur $spread $color;
+     -moz-box-shadow: inset $x $y $blur $spread $color;
+          box-shadow: inset $x $y $blur $spread $color;
+}
+
+
+// TRANSITIONS
+
+@mixin transition($transition-property, $transition-duration) {
+  -webkit-transition: $transition-property $transition-duration ease;
+     -moz-transition: $transition-property $transition-duration ease;
+       -o-transition: $transition-property $transition-duration ease;
+          transition: $transition-property $transition-duration ease;
+}
+
+
+// BOX-SIZING - Thi s is applied to all elements (*) - Paul Irish - http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ 
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+// Linear Gradients
+
+@mixin linear-gradient($gradient-from, $gradient-to) {
+  /* Fallback for sad browsers */
+  background-color: $gradient-to;
+  /* Mozilla Firefox */
+  background-image:    -moz-linear-gradient($gradient-from, $gradient-to);
+  /* Opera */
+  background-image:      -o-linear-gradient($gradient-from, $gradient-to);
+  /* WebKit (Chrome 11+) */
+  background-image:        -webkit-gradient(linear, left top, left bottom, color-stop(0, $gradient-from), color-stop(1, $gradient-to));
+  /* WebKit (Safari 5.1+, Chrome 10+) */
+  background-image: -webkit-linear-gradient($gradient-from, $gradient-to);
+  /* IE10 */
+  background-image:     -ms-linear-gradient($gradient-from, $gradient-to);
+  /* W3C */
+  background-image:         linear-gradient($gradient-from, $gradient-to);
+}
+
+// Columns
+
+@mixin columns($column-count, $column-gap, $column-rule-color, $column-rule-style, $column-rule-width) {
+  column-count: $column-count;
+  -moz-column-count: $column-count;
+  -webkit-column-count: $column-count;
+  column-gap: $column-gap;
+  -moz-column-gap: $column-gap;
+  -webkit-column-gap: $column-gap;
+  column-rule-color: $column-rule-color;
+  -moz-column-rule-color: $column-rule-color;
+  -webkit-column-rule-color: $column-rule-color;
+  column-rule-style: $column-rule-style;
+  -moz-column-rule-style: $column-rule-style;
+  -webkit-column-rule-style: $column-rule-style;
+  column-rule-width: $column-rule-width; 
+  -moz-column-rule-width: $column-rule-width;  
+  -webkit-column-rule-width: $column-rule-width;
+}
+
+// Flexbox
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+// Media Queries
+
+@mixin responsive($width) {
+
+  // @include responsive(small-screens) {}
+  @if $width == small-screens {
+    @media only screen and (min-width: $bp-small) { 
+      @content; }
+  }
+
+  // @include responsive(small-screens-1) {} 
+  @if $width == small-screens-1 {
+    @media only screen and (min-width: $bp-small-1) { 
+      @content; }
+  }  
+
+  // @include responsive(small-screens-2) {} 
+  @if $width == small-screens-2 {
+    @media only screen and (min-width: $bp-small-2) { 
+      @content; }
+  }
+
+  // @include responsive(medium-screens) {} 
+  @if $width == medium-screens {
+    @media only screen and (min-width: $bp-medium) { 
+      @content; }
+  }
+
+  // @include responsive(medium-screens-1) {} 
+  @if $width == medium-screens-1 {
+    @media only screen and (min-width: $bp-medium-1) { 
+      @content; }
+  }
+
+  // @include responsive(medium-screens-2) {} 
+  @if $width == medium-screens-2 {
+    @media only screen and (min-width: $bp-medium-2) { 
+      @content; }
+  }
+
+  // @include responsive(large-screens) {} 
+  @if $width == large-screens {
+    @media only screen and (min-width: $bp-large) { 
+      @content; }
+  }
+
+  // @include responsive(large-screens-1) {} 
+  @if $width == large-screens-1 {
+    @media only screen and (min-width: $bp-large-1) { 
+      @content; }
+  }
+
+  // @include responsive(large-screens-2) {} 
+  @if $width == large-screens-2 {
+    @media only screen and (min-width: $bp-large-2) { 
+      @content; }
+  }
+
+  // @include responsive(large-screens-3) {}
+  @if $width == large-screens-3 {
+    @media only screen and (min-width: $bp-large-3) { 
+      @content; }
+  }
+}
+
+// Background Cover
+
+@mixin bgcover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

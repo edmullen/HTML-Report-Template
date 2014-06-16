@@ -1,0 +1,83 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+THEME TYPOGRAPHIC STYLES
+These styles set up the general typographic styles, overriding the baseline without 
+defining layout-specific aspects. These styles do not affect the layout of the site. When this 
+file is removed, typographic styles revert to the baseline styles and styles 
+established with variables.
+======================================================================================= 
+
+*/
+
+// Using the following proportional scale
+//  .8 / 1 / 1.25  / 1.563 / 1.953 / 2.441 / 3.052 / 3.815 / 4.768
+
+
+h1 {
+  @include responsive(medium-screens) {
+    font-size: 3.815rem; 
+    line-height: 1;
+  }
+
+  @include responsive(large-screens) {
+    font-size: 4.768rem; 
+    line-height: 1;
+  }
+}
+
+h2 {
+  @include responsive(medium-screens) {
+    font-size: 2.441rem; 
+    line-height: 1.2;
+  }
+
+  @include responsive(large-screens) {
+    font-size: 3.052rem; 
+    line-height: 1.2;
+  }
+}
+
+
+figcaption {
+  font-size: .8rem;
+  color: $color-neutral-light-darker;
+
+  a {
+    color: $color-neutral-light-darker;
+    text-decoration: underline;
+
+    &:visited { 
+      color: $color-neutral-light-darker;
+    }
+  }
+}
+
+
+a.button {
+  float: left;
+  @include rounded($radius);
+  background-color: $color-accent;
+  padding: .64rem 1.25rem;
+  margin: 0 .5rem .5rem 0;
+  text-align: center;
+  margin-right: .5rem;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    background-color: $color-accent-darker;
+  }
+}
+
+
+.appendix {
+  font-size: .8em;
+}
+
+
+.footnotes .section-content p {
+  padding-left: 3em;
+  text-indent: -3em;
+}

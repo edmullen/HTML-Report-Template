@@ -1,0 +1,1585 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+TEMPLATE STYLES
+These styles define the template layout and formatting. The default styles are 
+mobile-first plus two main breakpoints and two "tweakpoints" between each. if you are 
+customizing this template, first update _variables.scss. If you need further 
+customization, create override styles in _theme.css file.
+=======================================================================================
+
+*/
+
+
+// TYPOGRAPHIC STYLES
+  // The following proportional scale is used for type and spacing:
+  //  5. / .64 / .8 / 1 / 1.25  / 1.563 / 1.953 / 2.441 / 3.052 / 3.815 / 4.768
+
+
+h1 {
+  @include responsive(medium-screens) {
+    font-size: 3.815rem; 
+    line-height: 1;
+  }
+
+  @include responsive(large-screens) {
+    font-size: 4.768rem; 
+    line-height: 1;
+  }
+}
+
+
+h2 {
+  @include responsive(medium-screens) {
+    font-size: 2.441rem; 
+    line-height: 1.2;
+  }
+
+  @include responsive(large-screens) {
+    font-size: 3.052rem; 
+    line-height: 1.2;
+  }
+}
+
+
+
+
+
+
+// BASIC BUTTON STYLE
+
+  a.button {
+    float: left;
+    @include rounded($radius);
+    background-color: $color-accent;
+    padding: .64rem 1.25rem;
+    margin: 0 .5rem .5rem 0;
+    text-align: center;
+    margin-right: .5rem;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      background-color: $color-accent-darker;
+    }
+  }
+
+
+
+// END OF TEXT ICON
+  .fa-square {
+    font-size: .8em;
+  }
+
+
+
+// GLOBAL HEADER
+
+  .global-header {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 10px $margin-outer-sides;
+    background-color: $color-reverse-bg;
+    color: $color-reverse-knockout;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    a {
+      color: $color-reverse-knockout;
+
+      &:hover, &:active {
+        color: $color-accent;
+      }
+    }
+
+    .header-page-logo {
+      float: left;
+      line-height: .75em;
+
+      img {
+        height: 40px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .header-page-sections {
+      float: right;
+      margin-top: .25rem;
+      margin-left: $margin-outer-sides * 1.5;
+    }
+
+    .header-page-social-media {
+      float: right;   
+      margin-top: .25rem;
+      margin-left: $margin-outer-sides * 1.5;
+      display: none;
+
+      @include responsive(medium-screens) {
+        display: inline;
+      }
+
+      .social-network {
+        margin-left: .5em;
+      }
+    }
+
+    .header-page-download {
+      float: right;
+      margin-top: .25rem;
+      margin-left: $margin-outer-sides * 1.5;
+    }
+
+    .label {
+      text-transform: uppercase;
+      font-size: .8em;
+      padding-left: .25em;
+      display: none;
+
+      @include responsive(medium-screens) {
+        display: inline;
+      }
+    }
+  }
+// End: GLOBAL HEADER
+
+
+
+// COVER 
+  // Contains cover image and logo, if one is used.
+
+  .report-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    z-index: 20;
+    
+    background-image: url(../img/biophilia-cover-1600.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $color-reverse-bg;
+    vertical-align: bottom;
+    @include bgcover;
+
+    @include responsive(large-screens-2) {
+      background-image: url(../img/biophilia-cover-2400.jpg);
+    }    
+
+    .cover-text {
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding: 60% $margin-outer-sides $margin-outer-sides $margin-outer-sides;
+      text-align: center;
+
+      background: -moz-linear-gradient(top,  rgba(62,63,48,0) 0%, rgba(50,51,39,0.9) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,63,48,0)), color-stop(100%,rgba(50,51,39,0.9)));
+      background: -webkit-linear-gradient(top,  rgba(62,63,48,0) 0%,rgba(50,51,39,0.9) 100%);
+      background: -o-linear-gradient(top,  rgba(62,63,48,0) 0%,rgba(50,51,39,0.9) 100%);
+      background: -ms-linear-gradient(top,  rgba(62,63,48,0) 0%,rgba(50,51,39,0.9) 100%);
+      background: linear-gradient(to bottom,  rgba(62,63,48,0) 0%,rgba(50,51,39,0.9) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003e3f30', endColorstr='#e6323327',GradientType=0 );
+
+      @include responsive(medium-screens-1) {
+        padding: 25% 10% 6.4% 10%;
+        text-align: left;
+      }
+
+      @include responsive(large-screens) {
+        padding: 25% 8% 5% 8%;
+      }
+    }
+
+    h1.cover-text-title {
+      padding: 0;
+      margin: 0 0 .25em 0;
+      position: relative;
+      display: block;
+      color: $color-canvas;
+      font-size: 1.953rem;
+      line-height: 1.1em;
+      text-transform: uppercase;
+      font-weight: $bold-font-weight;
+
+      @include responsive(medium-screens-1) {
+        font-size: 2.441rem;
+      }
+
+      @include responsive(large-screens) {
+        font-size: 3.815rem;
+      }
+
+      @include responsive(large-screens-2) {
+        font-size: 4.768rem;
+      }
+    }
+
+    p.cover-text-subtitle {
+      padding: 0;
+      margin: 0;
+      display: block;
+      color: $color-canvas;
+      font-size: 1rem;
+      line-height: 1.3em;
+
+      @include responsive(medium-screens-1) {
+        font-size: 1.25rem;
+      }
+
+      @include responsive(large-screens) {
+        font-size: 1.563rem;
+      }
+    }
+
+    .cover-logo {
+      height: 100px;
+      padding-top: 1rem;
+
+      @include responsive(large-screens) {
+        height: 120px;
+        padding-top: 2rem;
+      }
+
+      @include responsive(large-screens-1) {
+        height: 150px;
+        padding-top: 3rem;
+      }
+    }
+
+    .cover-text-arrow {
+      display: none;
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: .25em;
+      left: 50%;
+      @include transition($transition-property, $transition-duration);
+
+      a, a:visited {
+        color: $color-canvas;
+      }
+
+      a:hover, a:active {
+        color: $color-accent;
+      }
+
+      @include responsive(medium-screens-1) {
+        display: block;
+        font-size: 2rem;
+        bottom: .75em;
+      }
+    }
+  }
+
+
+
+
+// ARTICLE CONTAINER
+  // Contains front matter, main text, and appendices.
+
+  // This accounts for cover image.
+  .article-container {
+    position: absolute;
+    top: 100%;
+
+    @include responsive(large-screens-1) {
+      top: 100%;  
+    }
+  }
+
+
+
+
+// FRONT MATTER
+
+  // This pertains to the introductory section of the report after the cover and before the main text.
+  section#front-matter.anchor:before {
+    margin-top: -60px;
+    height: 60px;
+  }
+
+  #front-matter {
+    padding: 0;
+    padding-bottom: $margin-outer-sides * 2;
+    margin: 0;
+    background-color: $color-neutral;
+    z-index: 10;
+    position: relative;
+
+    &.section {
+      border-top: 0;
+    } 
+
+    header.report-title {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      margin: 0 0 1em 0;
+      padding: 0 $margin-outer-sides;
+    }
+
+    h3 {
+      font-size: .8rem;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0 $margin-outer-sides;
+    }
+
+    p {
+      padding-right: $margin-outer-sides;
+      padding-left: $margin-outer-sides;
+    }
+
+    p.report-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      padding-bottom: 0;
+    }
+
+    .report-overview {
+      max-width: 60em;
+      margin: 0 auto;
+    }
+
+    #abstract {
+      width: 100%;
+      border-top: 1px solid $color-neutral-darker;
+      padding-top: $margin-outer-sides * 1.563;
+      padding-bottom: $margin-outer-sides;
+    }
+
+    #table-of-contents {
+      width: 100%;
+    }
+
+    #table-of-contents > ol {
+      margin-right: $margin-outer-sides;
+      margin-left: $margin-outer-sides;
+    }
+
+    #notes {
+      width: 100%;
+      font-size: .8rem;
+      position: relative;
+
+      .showhide {
+        top: 1em;
+        right: $margin-outer-sides;
+      }
+    }
+
+    #table-of-contents, #notes, #download {
+      border-top: 1px solid $color-neutral-darker;
+      padding-top: $margin-outer-sides * 1.25;
+      padding-bottom: $margin-outer-sides * .25;
+
+      @include responsive(medium-screens-1) {
+        padding-top: $margin-outer-sides * 2;
+      padding-bottom: $margin-outer-sides;
+      }
+    }
+
+    #download {
+      width: 100%;
+      font-size: .8rem;
+    }
+
+    .download-formats {
+      padding: 0 $margin-outer-sides;
+    }
+
+    .fa-download {
+      margin-right: .375em;
+    }
+
+    @include responsive(small-screens-1) {
+
+      h1 {
+        font-size: 2.441rem;
+        padding-top: .75em;
+      }
+
+      p.report-subtitle {
+        font-size: 1.25rem;
+      }
+    }
+
+    @include responsive(medium-screens-1) {
+      
+      header.report-title {
+        padding-bottom: 3em;
+      }
+
+      h1 {
+        font-size: 3.052rem;
+        padding-bottom: .175em;
+      }
+
+      h2, h3, p, .download-formats {
+        padding-right: 10%;
+        padding-left: 10%;
+      }
+
+      #abstract {
+        padding-top: $margin-outer-sides * 2.441;
+        padding-bottom: $margin-outer-sides * 1.25;
+      }
+
+      #table-of-contents > ol {
+        margin-right: 10%;
+        margin-left: 10%;
+      }
+    }
+
+    @include responsive(medium-screens-2) {
+
+      h2, h3, p, .download-formats {
+        padding-right: 15%;
+        padding-left: 15%;
+      }
+
+      #table-of-contents > ol {
+        margin-right: 15%;
+        margin-left: 15%;
+      }
+    }
+
+    @include responsive(large-screens) {
+
+      h1 {
+        font-size: 3.815rem;
+        padding-right: 1em;
+        padding-left: 1em;
+        padding-bottom: .125em;
+      }
+
+      h2, h3, p, .download-formats {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      p.report-subtitle {
+        font-size: 1.953rem;
+      }
+
+      #abstract {
+        width: 94%;
+        margin-right: 3%;
+        margin-left: 3%;
+        padding-bottom: $margin-outer-sides * 2.441;
+      }
+
+      .abstract-text {
+        @include columns(3, $margin-outer-sides, #000, solid, 0px);
+      }
+
+      #table-of-contents {
+        width: 45.5%;
+        float: left;
+        margin-right: 1.5%;
+        margin-left: 3%;
+      }
+
+      #table-of-contents > ol {
+        margin-right: 15%;
+        margin-left: 0;
+      }
+
+      #notes {
+        width: 45.5%;
+        float: right;
+        margin-right: 3%;
+        margin-left: 1.5%;
+      }
+
+      #download {
+        width: 94%;
+        float: left;
+        margin-right: 3%;
+        margin-left: 3%;
+      }
+    }
+
+    @include responsive(large-screens-1) {
+
+      #abstract {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      #table-of-contents {
+        width: 48.5%;
+        margin-right: 1.5%;
+        margin-left: 0;
+      }
+
+      #notes {
+        width: 48.5%;
+        margin-right: 0;
+        margin-left: 1.5%;
+      }
+
+      #download {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    } 
+  }
+// End: FRONT MATTER
+
+
+
+// SHOW/HIDE 
+// Some positioning happens more locally.
+
+  .showhide {
+    margin-right: 0;
+    position: absolute;
+    top: -3px;
+    right: 0;
+    font-size: 1.563rem;
+    line-height: .75em;
+    color: $color-accent;
+
+    @include responsive(medium-screens-1) {
+      display: none;
+    }
+  }
+
+  .showhide-target {
+    display: none;
+    padding-bottom: 1rem;
+
+    @include responsive(medium-screens-1) {
+      display: inline;
+    }
+  }
+
+
+// ANCHOR LINKS - Accomodate for the fixed global header.
+
+  section.anchor:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -90px; 
+    height: 90px; 
+    visibility: hidden; 
+  }
+
+  p.anchor:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -200px; 
+    height: 200px; 
+    visibility: hidden; 
+  }
+
+  a.anchor:before { 
+    display: inline-block; 
+    content: " "; 
+    margin-top: -180px; 
+    height: 180px; 
+    visibility: hidden; 
+  }
+
+// PERMALINK 
+  .permalink {
+    display: block;
+    position: relative;
+    top: -1.8em;
+    padding-left: .25em;
+    font-size: .8rem;
+    font-weight: normal;
+
+    a {
+      color: $color-accent;
+    }
+
+    a:hover {
+      @include transition($transition-property, $transition-duration);
+      color: $color-accent-darker;
+    }
+
+    .fa {
+      font-size: .9rem;
+      position: relative;
+      top: .1em;
+      padding-right: .1em;
+    }
+  }
+// End: PERMALINK
+
+
+// jQUERY-STICKEM 
+// Used to fix the Section Context element at the right point.
+// https://github.com/davist11/jQuery-Stickem
+
+  .stickem-container {
+    position: relative;
+
+    .section-context {
+      display: none;
+      z-index: 0;
+
+      @include responsive(large-screens) {
+        display: block;
+        width: 20%;
+        float: left;
+        padding-top: $margin-outer-sides * 1.25;
+        padding-right: $margin-outer-sides;
+        padding-left: $margin-outer-sides; 
+      }
+
+      .section-context-label {
+        display: block;
+        text-transform: uppercase;
+        font-size: .8rem;
+        color: $color-dark-lighter;
+        padding-bottom: 1em;
+        text-shadow: 0 0 9px $color-canvas;
+      }
+
+      .section-context-level1 {
+        display: block;
+        font-weight: $bold-font-weight;
+        text-shadow: 0 0 9px $color-canvas;
+      }
+
+      .section-context-level2 {
+        display: block;
+        text-shadow: 0 0 9px $color-canvas;
+      }
+
+      .section-context-level3 {
+        display: block;
+        text-shadow: 0 0 9px $color-canvas;
+      }
+    }
+  }
+
+  .stickem {
+    visibility: hidden;
+  }
+
+  .stickit {
+      visibility: visible;
+      position: fixed;
+      top: 60px;
+  }
+
+  .stickit-end {
+      bottom: 0px;
+      position: absolute;
+      right: 0;
+  }
+
+  ul.nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 15px;
+
+    a, a:visited {
+      color: $color-dark;
+    }
+
+    li {
+      display: none;
+      margin: 0;
+    }
+
+    > li.active { 
+      display: block;
+    }
+
+    > li.active-current a {
+      font-weight: $bold-font-weight;
+    }
+  }
+
+// End: jQUERY-STICKEM 
+
+
+// BODY MATTER
+
+  .body-matter h1 {
+    display: none;
+  }
+
+  .section {
+    padding: 2rem 0 2rem 0;
+    border-top: 1px solid $color-neutral;
+  }
+
+  .section-content {
+
+    h1, h2, h3, h4, h5, h6, p, code, figcaption, .img-column img, .permalink, ol, ul {
+      padding-right: $margin-outer-sides;
+      padding-left: $margin-outer-sides;
+    }
+
+    .number {
+      display: block;
+      color: $color-dark-lighter;
+      font-weight: $normal-font-weight;
+      font-size: 80%;
+    }
+
+    ol ol, ul ul, ol ul, ul ol {
+      padding-left: 1.5em;
+    }
+
+    blockquote, table {
+      margin-top: 1.5rem;
+      margin-right: $margin-outer-sides;
+      margin-left: $margin-outer-sides;
+      z-index: 10;
+    }
+
+    blockquote {
+      color: $color-accent;
+      font-size: 1.953rem;
+      font-weight: $normal-font-weight;
+
+      em {
+        text-transform: uppercase;
+        font-style: normal;
+      }
+
+      em.blockquote-bigger {
+        font-size: 1.953rem * 2;
+        font-style: normal;
+        text-transform: none;
+        display: block;
+        font-weight: $bold-font-weight;
+      }
+
+      &:before {
+        content: ''; 
+        width: 33.333%; 
+        height: 1rem; 
+        top: -10px;
+        display: block;
+        position: relative;
+        border-top: .5rem solid $color-accent;
+      }
+    }
+
+    .img-container {
+      width: 100%;
+      padding-bottom: 1.5rem;
+      display: block;
+
+      figcaption {
+        font-size: 80%;
+        color: $color-callout-bg;
+        margin-top: .5em;
+
+        .caption-headline {
+          display: block;
+          text-transform: uppercase;
+          font-weight: $bold-font-weight;
+        }
+      }
+    }
+
+    .img-column {
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .img-full {
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .callout {
+      width: auto;
+      margin: 0 0 1.5em 0;
+      font-size: .8em;
+      color: $color-callout-text;
+
+
+      .callout-container {
+        width: auto;
+        background-color: $color-callout-bg;
+        padding: 0 0 .5rem 0;
+
+        img {
+          padding: 0;
+          margin: 0;
+        }
+
+        figcaption {
+          font-size: .8rem;
+          color: $color-callout-text-secondary;
+
+          a {
+            color: $color-callout-text-secondary;
+            text-decoration: underline;
+
+            &:visited { 
+              color: $color-callout-text-secondary;
+            }
+          }
+        }
+      }
+
+      p.callout-headline {
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: .5em;
+        text-indent: 0;
+        color: $color-callout-text;
+        font-size: 1.25rem;
+        line-height: 1.3;
+        font-weight: $bold-font-weight;
+      }
+
+      ol, ul {
+        margin-right: $margin-outer-sides;
+        margin-left: $margin-outer-sides;
+        padding-right: 1em;
+        padding-left: 1em;
+      }
+
+      table {
+        margin-right: $margin-outer-sides;
+        margin-left: $margin-outer-sides;
+      }
+
+      .img-container {
+        width: 100%;
+
+        img {
+          width: 100%
+        }
+      }
+    }
+
+    @include responsive(medium-screens-1) {
+
+      h2, h3, h4, h5, h6, p, code, figcaption, .img-column img, .permalink, ol, ul {
+        padding-right: 10%;
+        padding-left: 10%;
+      }
+
+      blockquote, table {
+        margin-right: 10%;
+        margin-left: 10%;
+      }
+
+      .callout {
+        float: right;
+        width: 45%;
+
+        h2, h3, h4, h5, h6, p, code, figcaption, .img-column img, .permalink {
+          padding-right: $margin-outer-sides;
+          padding-left: $margin-outer-sides;
+        }
+
+        .callout-container {
+          margin: 0 $margin-outer-sides;
+        }
+
+        &.full {
+          width: auto;
+          padding-top: $margin-outer-sides;
+
+          .callout-container {
+            margin: 0;
+          }
+
+          p {
+            padding-right: 10%;
+            padding-left: 10%;
+          }
+
+          p.callout-headline {
+            padding-top: $margin-outer-sides;
+          }
+          
+          ol, ul, table {
+            margin-right: 10%;
+            margin-left: 10%;
+          }
+
+          .img-container {
+            width: 50%;
+          }
+
+          .img-container {
+            margin-top: $margin-outer-sides;
+          }
+
+          .img-secondary {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            float: right;
+          }
+        }
+      }
+    }
+
+    @include responsive(medium-screens-2) {
+
+      h2, h3, h4, h5, h6, p, code, figcaption, .img-column img, .permalink, ol, ul {
+        padding-right: 15%;
+        padding-left: 15%;
+      }
+
+      blockquote, table {
+        margin-right: 15%;
+        margin-left: 15%;
+      }
+
+      .callout {
+
+        &.full {
+
+          .callout-container {
+
+            p {
+              padding-right: 15%;
+              padding-left: 15%;
+            }
+
+            ol, ul, table {
+              margin-right: 15%;
+              margin-left: 15%;
+            }
+          }
+        } 
+      }
+    }
+
+    @include responsive(large-screens) {
+      width: 80%;
+      float: right;
+
+      h2 {
+        padding-right: $margin-outer-sides;
+        padding-left: 0;
+      }
+
+      h3, h4, h5, h6, p, code, figcaption, .permalink, ol, ul {
+        padding-right: 25%;  // 20% of total container width
+        padding-left: 0;
+      }
+
+      blockquote, table {
+        margin-right: 25%;
+        margin-left: 0;
+      }
+
+      .img-column {
+        
+        img {
+          float: left;
+          width: 75%;
+          padding: 0 $margin-outer-sides 0 0;
+        }
+
+        figcaption {
+          float: right;
+          width: 25%;
+          padding: 0 $margin-outer-sides 0 0;
+        }
+      }
+
+      .img-full {
+        padding-right: $margin-outer-sides;
+      }
+
+      .callout {
+        width: 42.857%;
+
+        .callout-container {
+          width: auto;
+          margin: 0 auto;
+          max-width: 320px;
+        }
+
+        &.full {
+          width: auto;
+          max-width: none;
+          margin: 0 0 1.5em 0;
+
+          .callout-container {
+            max-width: none;
+            margin-left: 0;
+            margin-right: $margin-outer-sides;
+
+            p {
+              padding-right: 33%;
+              padding-left: 3%;
+            }
+
+            > ol, > ul, table {
+              margin-right: 33%;
+              margin-left: 3%;
+            }
+          }
+        }
+      }
+    }  
+
+    @include responsive(large-screens-1) {
+      width: 75%;
+      float: right;
+
+      h3, h4, h5, h6, p, code, figcaption {
+        padding-right: 33.333%;  // 25% of total container width
+      }
+
+      blockquote {
+        margin-right: 33.333%;
+      }
+
+      .img-column {
+        
+        img {
+          float: left;
+          width: 66.666%;
+          padding: 00;
+        }
+        
+        figcaption {
+          float: right;
+          width: 33.333%;
+          padding: 0 $margin-outer-sides;
+        }
+      }
+    }  
+
+    @include responsive(large-screens-2) {
+      width: 72.5%;
+      float: right;
+
+      h3, h4, h5, h6, p, code, figcaption {
+        padding-right: 37.931%;  // 27.5% of total container width
+      }
+
+      blockquote {
+        margin-right: 37.931%;
+      }
+
+      .img-column {
+        
+        img {
+          float: left;
+          width: 62%;
+          padding: 00;
+        }
+        
+        figcaption {
+          float: right;
+          width: 38%;
+          padding: 0 $margin-outer-sides;
+        }
+      }
+    }  
+
+    @include responsive(large-screens-3) {
+      width: 70%;
+      float: right;
+
+      p, code, figcaption {
+        padding-right: 42.857%;  // 30% of total container width
+      }
+
+      blockquote {
+        margin-right: 42.857%;
+      }
+
+      .img-column {
+        
+        img {
+          float: left;
+          width: 57%;
+          padding: 00;
+        }
+        
+        figcaption {
+          float: right;
+          width: 43%;
+          padding: 0 $margin-outer-sides;
+        }
+      }
+
+      .callout {
+        width: 42.857%;
+      }
+    }
+  }
+
+  .appendix {
+    font-size: .8em;
+    background-color: $color-neutral-lighter;
+    position: relative;
+    z-index: 1;
+  }
+// End: SECTION STYLES
+
+
+
+
+// FOOTNOTES
+
+  .appendices h1 {
+    display: none;
+  }
+
+  .footnote-link {
+    font-size: 80%;
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-indent: 0;
+
+    a {
+      padding-right: .25em;
+      padding-left: .25em;
+      color: $color-accent;
+    }
+  }
+
+  .appendix .footnote-link {
+      font-size: 100%;
+    }
+
+  .footnotes .section-content p {
+    margin-left: 3rem;
+    text-indent: -3rem;
+
+    a.footnote-back-link {
+      color: $color-accent;
+      padding-right: .25em;
+      padding-left: .25em;
+
+      &:hover {
+        color: $color-accent-darker;
+      }
+    }
+
+    i {
+      text-indent: 0;
+    }
+  }
+
+  .footnotes :target {
+
+    .footnote-back-link {
+      font-size: 80%;
+      font-style: normal;
+    }
+  }
+
+  .footnotes-target {
+    font-size: 125%;
+    font-weight: $bold-font-weight;
+    font-style: italic;
+  }
+
+  .footnotes p:target {
+    margin-left: 0rem;
+    text-indent: 0;
+
+    i {
+      text-indent: 0;
+    }
+  }
+
+  // Fade effect of :target
+  .footnotes :target {
+    -webkit-animation: footnote-fade 2s 1;
+    -moz-animation: target-fade 2s 1;
+  }
+
+  @-webkit-keyframes footnote-fade {
+    0% {
+      color: $color-accent;
+    }
+    100% { 
+      color: $color-dark; 
+    }
+  }
+
+  @-moz-keyframes footnote-fade {
+    0% {
+      color: $color-accent;
+    }
+    100% { 
+      color: $color-dark; 
+    }
+  }
+
+  .footnote-link a:target {
+    -webkit-animation: footnote-link-fade 1s 1;
+    -moz-animation: target-fade 1s 1;
+  }
+
+  @-webkit-keyframes footnote-link-fade {
+    0% {
+      background-color: $color-accent;
+      color: $color-accent-darker;
+    }
+    100% { 
+      background-color: $color-canvas; 
+      color: $color-accent;
+    }
+  }
+
+  @-moz-keyframes footnote-link-fade {
+    0% {
+      background-color: $color-accent;
+    }
+    100% { 
+      background-color: $color-canvas; 
+    }
+  }
+  
+
+  // Some necessary tweaks to .anchor in order to retain indenting.
+  .footnotes p.anchor:before { 
+    display: inline; 
+    content: ""; 
+  }
+
+  // Some necessary tweaks to .anchor in order to retain indenting.
+  .footnotes p.anchor:target:before { 
+    display: block; 
+    content: " "; 
+  }
+
+
+
+  /*
+   * It enables animation on FF and Opera
+   * But, it seems my Opera doesn't support
+   * -o-animation
+   */
+
+  .footnotes :target {
+    -o-animation: footnote-fade 2s 1;
+       animation: footnote-fade 2s 1;
+  }
+  .footnote-link a:target {
+    -o-animation: footnote-link-fade 1s 1;
+       animation: footnote-link-fade 1s 1;
+  }
+
+
+
+// PAGE FOOTER
+
+  .page-footer {
+    background-color: $color-neutral;
+    padding-top: 1.953rem;
+    padding-bottom: .5rem;
+    font-size: .8rem;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+  }
+
+// QUICK LINK 
+  // Nav element in lower left corner above large breakpoint
+
+  .quick-links {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    font-size: .8rem;
+
+    i {
+      font-size: 1rem;
+    }
+
+    a:visited {
+      color: $color-accent;
+    }
+
+    a:hover {
+      color: $color-accent-darker;
+    }
+
+    .back-to-top {
+      border-bottom: 1px solid $color-neutral;
+      padding-bottom: .8rem;
+      margin-bottom: .8rem;
+    }
+
+    @include responsive(large-screens) {
+      display: block;
+      width: 20%;
+      float: left;
+      padding-right: $margin-outer-sides;
+      padding-bottom: $margin-outer-sides * .75;
+      padding-left: $margin-outer-sides; 
+    }
+  }
+
+  .quick-links-item {
+    display: block;
+  }
+// End: QUICK LINK
+
+
+
+// POPUP OVERLAY
+  // The menu containing the TOC, Download links, and Sharing options 
+  // uses Vast ENgineering's jquery-popup-overlay
+  // https://github.com/vast-engineering/jquery-popup-overlay
+
+  // Don't edit - These come from the plugin.
+    .well {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        display:none;
+        margin:1em;
+    }
+    pre.prettyprint {
+        padding: 9px 14px;
+    }
+    .fulltable {
+        max-width: 100%;
+        overflow: auto;
+    }
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .lineheight {
+        line-height: 3em;
+    }
+    .pagetop {
+        background: url(http://subtlepatterns.com/patterns/congruent_outline.png) #333;
+        background-attachment: fixed;
+        color: #fff;
+    }
+    .page-header {
+        border-bottom: none;
+    }
+    .initialism {
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
+    
+  // End: Don't edit
+
+
+  // Updated for this template:
+  #my_popup h1 {
+    display: none;
+  }
+
+  .popup_content {
+      color: $color-reverse-knockout;
+    }
+
+  .popup_wrapper {
+    background-color: $color-reverse-bg;
+  }
+
+  .my_popup-close-button {
+    background-color: $color-reverse-knockout;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+
+    a {
+      color: $color-reverse-bg;
+
+      &:visited {
+        color: $color-reverse-bg;
+      }
+
+      &:hover, &:active {
+        color: $color-accent;
+      }
+    }
+
+    .my_popup_close-x {
+      font-size: 34px;
+      line-height: .75em;
+      padding: 12px 20px 14px 20px;
+      margin: 0;
+      display: block;
+    }
+  }
+
+  .my_popup_close-return {
+    font-size: .64rem;
+    text-transform: uppercase;
+    display: none;
+
+    @include responsive(medium-screens-1) {
+      display: block;
+      padding-bottom: 1rem;
+    }
+  }
+
+  #my_popup {
+    width: 100%;
+    max-width: 50em;
+    padding-top: $margin-outer-sides * 1.25;
+    padding-bottom: $margin-outer-sides * 3.052;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: .8rem;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 40px;
+
+      @include responsive(medium-screens-1) {
+        font-size: 1.563rem;
+        padding-right: 0;
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 1rem 0 1rem 0;
+
+      @include responsive(medium-screens-1) {
+        margin: 1.5rem 0 1.5rem 0;
+      }
+    }
+
+    .report-subtitle {
+      font-size: .8rem;
+      color: $color-reverse-knockout-60;
+      padding-bottom: .75em;
+      padding-right: 40px;
+
+      @include responsive(medium-screens-1) {
+        font-size: 1.25rem;
+        padding-right: 0;
+      }
+    }
+
+    .author {
+      font-size: .64rem;
+      color: $color-reverse-knockout-60;
+      padding-bottom: 0;
+
+      @include responsive(medium-screens-1) {
+        font-size: .8rem;
+      }
+    }
+
+    .fa-download, .fa-share {
+      margin-right: .375em;
+    }
+
+    .my_popup-section {
+      margin-right: $margin-outer-sides;
+      margin-left: $margin-outer-sides;
+
+      @include responsive(medium-screens-1) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    .my_popup-header {
+      border-bottom: 1px solid $color-reverse-knockout-30;
+      padding-bottom: $margin-outer-sides;
+
+      @include responsive(medium-screens-1) {
+        width: 90%;
+        padding-bottom: 1.5rem;
+        margin-right: 5%;
+        margin-left: 5%;
+      }
+    }
+
+    .my_popup-download {
+      border-bottom: 1px solid $color-reverse-knockout-30;
+      position: relative;
+
+      .download-formats {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      a.button {
+        width: 100%;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        font-size: .8em;
+      }
+
+      @include responsive(medium-screens-1) {
+        width: 25.5%;
+        float: right;
+        margin-right: 5%;
+        margin-left: 2.5%;
+        padding-top: .5rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+
+    .my_popup-table-of-contents {
+      border-bottom: 1px solid $color-reverse-knockout-30;
+      font-size: .8rem;
+
+      a {
+        color: $color-accent;
+
+        &:visited {
+          color: $color-accent;
+        }
+
+        &:hover, &:active {
+          color: $color-accent-lighter;
+        }
+      }
+      
+      @include responsive(medium-screens-1) {
+        width: 58.5%;
+        float: left;
+        border-bottom: none;
+        margin-right: 2.5%;
+        margin-left: 5%;
+        padding-top: .5rem;
+        font-size: inherit;
+      }
+    }
+
+    .my_popup-share {
+
+      @include responsive(medium-screens-1) {
+        width: 25.5%;
+        float: right;
+        margin-right: 5%;
+        margin-left: 2.5%;
+        padding-top: .5rem;
+      }
+    }
+  }
+// End: POPUP OVERLAY
+

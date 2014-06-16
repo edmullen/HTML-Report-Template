@@ -1,0 +1,113 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+THEME STYLES
+After having modified _variables.scss to reflect your themes style, make any additional
+overrides in this file.
+=======================================================================================
+
+*/
+
+.main {
+
+	h1, h2, h3, h4, h5, .report-title .report-subtitle {
+		color: #695b31;
+	}
+}
+
+.callout-container a, .callout-container a:hover, .callout-container a:visited, .callout-container a:active {
+	color: $color-canvas;
+}
+
+.popup_wrapper {
+	background-image: url(../img/hex-a-brown.png);
+}
+
+#my_popup {
+
+	a, .my_popup-table-of-contents a  {
+		color: $color-accent-lighter;
+
+		&:visited {
+			color: desaturate( $color-accent-lighter, 35%);
+		}
+
+		&:hover {
+			color: lighten($color-accent-lighter, 5%);
+		}
+	}
+
+	.my_popup_close-x {
+		color: $color-reverse-bg;
+
+		&:visited {
+		color: $color-reverse-bg;
+		}
+
+		&:hover, &:active {
+		color: $color-accent;
+		}
+    }
+
+    a.button {
+		color: $color-reverse-knockout;
+
+		&:hover {
+			color: $color-reverse-knockout;
+		}
+	}
+
+}
+
+a.button {
+	@include linear-gradient($gradient-from, $gradient-to);
+
+	&:hover {
+		@include linear-gradient($color-accent-lighter, $color-accent);
+	}
+}
+
+.global-header a:hover {
+	color: $color-accent-lighter;
+}
+
+#front-matter {
+	background-color: #f6f6f3;
+	background-image: url(../img/hex-a-default.png);
+	@include shadow-inset($x, $y, $blur, $spread, $color);
+}
+
+#introduction.section {
+	border-top: 0;
+}
+
+#appendix-calculations {
+	@include shadow-inset($x, 8px, $blur, $spread, $color);
+}
+
+
+
+.section-content blockquote {
+    color: $color-callout-bg;
+    margin-top: 0;
+
+    .blockquote-bigger {
+    	color: #dd5d2b;
+    }
+
+    &:before {
+        content: ''; 
+        width: 0; 
+        height: 0; 
+        top: 0;
+        border-top: 0;
+    }
+}
+
+ul.nav {
+	a, a:visited {
+      color: #695b31;
+    }
+}
+

@@ -1,0 +1,87 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+PRINT STYLES
+These styles establish the base typography rythmns after normalize.css
+has standardized display
+======================================================================================= 
+
+*/
+
+@import "_0_normalize.scss"; 
+@import "_1_variables.scss";
+@import "_2_mixins.scss";
+
+html { 
+	font-size: 14px; 
+}
+body { 
+	background: #fff;
+}
+
+body {
+  color: #000;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: $base-font-line-height;
+  background-color: #fff;
+}
+
+p {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.report-cover, .global-header, .permalink {
+	display: none;
+}
+
+.section-content aside {
+	color: #000;
+	width: 45%;
+	float: right;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	border: 1px solid #333;
+
+	&.full {
+        width: auto;
+        padding-top: $margin-outer-sides;
+
+        .aside-container {
+          margin: 0;
+        }
+
+        h4, p {
+          padding-right: 10%;
+          padding-left: 10%;
+        }
+
+        h4 {
+          padding-top: $margin-outer-sides;
+        }
+        
+        ol, ul, table {
+          margin-right: 10%;
+          margin-left: 10%;
+        }
+
+        .img-container {
+          width: 50%;
+        }
+
+        .img-container {
+          margin-top: $margin-outer-sides;
+        }
+
+        .img-secondary {
+          padding: 0 1.5rem 1.5rem 1.5rem;
+          float: right;
+        }
+      }
+}
+
+.showhide-target {
+	display: inline;
+}

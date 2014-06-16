@@ -1,0 +1,417 @@
+/* 
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+=======================================================================================
+THEME TYPOGRAPHIC STYLES
+These styles set up all the base typographic and branding styles without establishing 
+layout-specific aspects. This file does not affect the layout of the site. When this 
+file is removed, typographic styles revert to the baseline styles and styles 
+established with variables.
+======================================================================================= 
+
+*/
+
+body {
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: "league-gothic",sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  letter-spacing: -1px;
+  margin: 0 0 .65rem 0;
+
+  @include responsive(large-screens-2) {
+    font-size: 5.61rem;
+  } 
+}
+
+h2 {
+  letter-spacing: 0px; 
+  margin-top: 0;
+  line-height: 1;
+}
+
+figure {
+  line-height: 0;
+}
+
+figcaption, .flex-caption {
+  padding-top: $margin-outer-sides * .75;
+  padding-right: $margin-outer-sides;
+  padding-bottom: $margin-outer-sides * .75;
+  padding-left: $margin-outer-sides;
+  color: $color-neutral-dark-lighter;
+  line-height: 1.2em;
+  background-color: $color-accent-light-background;
+
+  @include responsive(large-screens) {
+    font-size: 90%;
+  }
+}
+
+blockquote {
+  font-family: $accent-font-family;
+  font-style: italic;
+  color: $color-accent;
+  font-weight: 300;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid $color-neutral-light;
+  margin: 2.5rem 0 0 0;
+  padding: 0;
+}
+
+.accent-font {
+  font-family: $accent-font-family; 
+  font-weight: $accent-font-weight;
+}
+
+.category {
+  @extend .accent-font;
+  text-transform: uppercase;
+  font-size: 75%;
+  padding-top: $margin-outer-sides * 1.333;
+  margin-bottom: .75em;
+}
+
+.subtitle {
+  margin-bottom: .375em;
+  font-size: 1.333em;
+  line-height: 1.4;
+  color: $color-neutral-dark-lighter;
+}
+
+.date {
+  font-size: 75%;
+  font-weight: 100;
+  @extend .accent-font;
+  color: $color-neutral-dark-lighter;
+}
+
+.intro {
+  display: block;
+  font-style: italic;
+  color: $color-neutral-dark-lighter;
+  padding-top: 1.333em;
+  margin-bottom: 1rem;
+
+  @include responsive(large-screens) {
+    font-size: 1.333em;
+    font-weight: 100;
+    padding-top: 1.333em;
+  }
+}
+
+
+.global-header {
+  background-color: $color-neutral-dark;
+  width: 100%;
+  padding: 0 $margin-outer-sides;
+  line-height: 2.5rem;
+
+  .global-logo {
+    font-family: $accent-font-family; 
+    letter-spacing: 1px;
+
+    a {
+      .global-logo-name {
+        font-weight: 600;
+        color: $color-neutral-light-lightest;
+        
+        &:visited {
+          color: $color-neutral-light-lightest;
+        }
+        
+        &:hover, &:visited:hover {
+          color: $color-accent-lighter;
+        }
+      }
+
+      .global-logo-tagline {
+        color: $color-neutral-dark-lighter;
+      }
+    }
+  }   // (.global-logo ends)
+
+  .global-nav {
+    font-weight: 400;
+    float: right;
+
+    li {
+      padding-left: 1em;
+      display: inline;
+    }
+
+    a {
+      color: $color-accent;
+      text-decoration: none;
+      
+      &:visited {
+        color: $color-accent;
+      }
+      
+      &:hover, &:visited:hover {
+        color: $color-accent-lighter;
+      }
+    }
+  }   // (.global-nav ends)
+}
+
+
+.homepage-feature {
+  color: $color-neutral-dark-lighter;
+
+  header {
+     
+    @extend .accent-font;
+
+    .homepage-logo {
+
+      h1 {
+        @extend .accent-font;
+        font-weight: 700;
+        color: $canvas-color;
+        font-size: 1.777em;
+        letter-spacing: 0px;
+      }
+
+      
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p.statement {
+    color: $canvas-color;
+    font-weight: 100;
+    font-size: 1.333rem;
+    font-style: italic;
+    @extend .text-center;
+    @extend .accent-font;
+
+    @include responsive(large-screens) {
+      font-size: 1.777rem;
+    }
+
+    a {
+      font-weight: 700;
+
+      &:visited {
+        color: $color-accent;
+      }
+
+      &:hover, &:visited:hover {
+        @include transition($transition-property, $transition-duration);
+        color: $color-accent-lighter;
+      }
+    }
+  }   // (p.statement ends)
+
+  nav {
+    
+    @extend .text-center;
+
+    a.feature-nav-item {
+      background-color: $color-accent;
+      display: block;
+      float: left;
+      width: 31%;
+      margin-right: 1%;
+      margin-left: 1%;
+      line-height: 2.5rem;
+      color: $canvas-color;
+      @include rounded($radius);
+
+      &:visited {
+        color: $canvas-color;
+      }
+      
+      &:hover, &:visited:hover {
+        @include transition($transition-property, $transition-duration);
+        background-color: $color-accent-lighter;
+      }
+    }   // (a.feature-nav-item ends)
+  }   // (nav ends)
+}   // (.homepage-feature ends)
+
+
+.homepage-icons {
+  fill: $canvas-color;
+
+  a {
+    @include transition($transition-property, $transition-duration);
+    fill: $color-neutral-dark-lighter;
+
+    &:visited {
+      @include transition($transition-property, $transition-duration);
+      fill: $color-neutral-dark-lighter;
+    }
+    
+    &:hover, &:visited:hover {
+      @include transition($transition-property, $transition-duration);
+      fill: $color-accent-lighter;
+    }
+  }
+
+  @include responsive(medium-screens) {
+    float: right;
+
+    .social-media-icons-phone {
+      display: none;
+    }
+  }
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 1em;
+    margin-right: .75em;
+
+    @include responsive(medium-screens) {
+      width: 1.75em;
+      height: 1.75em;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: .75em;
+    }
+  }
+}
+
+
+article.main {
+  h1 a {
+    color: $color-neutral-dark;
+
+    &:visited {
+      color: $color-neutral-dark;
+    }
+
+    &:hover, &:visited:hover {
+      color: $color-accent;
+    }
+  }
+
+  h2 {
+    padding-top: $margin-outer-sides * 2.5;
+  }
+
+  h3 {
+    padding-top: .5em;
+  }
+}
+
+
+.page-header {
+  h1 {
+    text-transform: uppercase;
+    font-size: 1.777rem;
+    letter-spacing: 0px;
+
+    @include responsive(medium-screens) {
+      font-size: 2.369rem;
+    }
+  }
+
+  a:visited {
+    color: $color-accent;
+  }
+
+  a:hover, &:visited:hover {
+    color: $color-accent-lighter;
+  }
+
+  .page-header-secondary {
+    text-transform: capitalize;
+    margin-right: .5em;
+    margin-left: .5em;
+    float: right;
+  }
+}
+
+
+.index-item {
+
+  h2 {
+    font-size: 1.777rem;
+    margin-top: .5rem;
+    margin-bottom: 0;
+
+    a {
+      color: $color-neutral-dark;
+      
+      &:visited {
+        color: $color-neutral-dark-lighter;
+      }
+      
+      &:hover, &:visited:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  p {
+    color: $color-neutral-dark-lighter;
+    margin-top: .25em;
+    margin-bottom: .375em;
+  }
+}
+
+ul.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0 $margin-outer-sides;
+
+  @include responsive(medium-screens) {
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    float: left;
+    margin: 0 .375em .375em 0;
+    padding: 0;
+  }
+}
+
+
+footer {
+  background-color: $color-neutral-light;
+  margin-top: 0;
+  padding-top: $margin-outer-sides * 1.777;
+
+  address {
+    margin: 2em 0;
+
+    p {
+      color: $color-neutral-light-darkest;
+
+      &.copyright-info {
+        font-size: 75%;
+      }
+
+      &.contact-info {
+
+        .company-name {
+          font-weight: 700;
+        }
+      }
+    }   // (p end)
+  }   // (address end)
+
+  aside {
+
+    h1 {
+      font-size: 2.369rem;
+      margin-bottom: 1.333rem;
+    }
+  }
+}
