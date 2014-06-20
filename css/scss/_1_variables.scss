@@ -28,7 +28,7 @@ with your overrides.
 
 	//  ACCENT - This is the most prominent accent color used to provide character and as links, with calculated variations.
 
-		$color-accent: #5aa4d3;
+		$color-accent: #db0086;
 		$color-accent-darker: darken($color-accent, 15%);
 		$color-accent-lighter: lighten($color-accent, 15%);
 		$color-accent-desaturated: desaturate( $color-accent, 35%);
@@ -36,14 +36,14 @@ with your overrides.
 
 	//  NEUTRAL - These colors are used in a number of places including .front-matter, .appendix, and .footer.
 
-		$color-neutral: #ecebe4;
-		$color-neutral-lighter: #f6f6f3; // Was: lighten($color-neutral, 10%);
+		$color-neutral: #ffe21e;
+		$color-neutral-lighter: lighten($color-neutral, 10%);
 		$color-neutral-darker: darken($color-neutral, 10%);
 
 
 	//  REVERSE - These colors are used for .global-header (persistent top navigation) and .my_popup (the navigation overlay)
 	
-		$color-reverse-bg: #605e55;
+		$color-reverse-bg: #2b2b2b;
 		$color-reverse-knockout: #fff;
 		$color-reverse-knockout-60: rgba($color-reverse-knockout,.6);
 		$color-reverse-knockout-30: rgba($color-reverse-knockout,.3);
